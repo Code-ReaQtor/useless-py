@@ -3,24 +3,31 @@
 # useless-py
 Useful python utilities with less effort.
 
-# Usage
+## Installation:
+```sh
+pip install useless-py
+```
 
-## set_interval() function
+## Usage:
+
+### set_interval() function
 ```python
 from useless import set_interval
+import time
 
 
 def my_function():
     print "Hello world!"
 
 set_interval(my_function, 500)  # Caution! Non-blocking.
-time.sleep(10) # Create blocking code
+time.sleep(10) # Write some blocking code
 
 ```
 
-## @interval decorator
+### @interval decorator
 ```python
 from useless import interval
+import time
 
 
 @interval(500)
@@ -28,11 +35,11 @@ def my_function():
     print "Hello world!"
 
 my_function()  # Caution! Non-blocking.
-time.sleep(10) # Create blocking code
+time.sleep(10) # Write some blocking code
 
 ```
 
-## set_timeout() function
+### set_timeout() function
 ```python
 from useless import set_timeout
 
@@ -44,7 +51,7 @@ set_timeout(my_function, 500)
 
 ```
 
-## @timeout decorator
+### @timeout decorator
 ```python
 from useless import timeout
 
@@ -57,7 +64,7 @@ my_function()
 
 ```
 
-## set_time_limit() function
+### set_time_limit() function
 ```python
 from useless import set_time_limit, TimeLimitExceededError
 import time
@@ -78,7 +85,7 @@ except TimeLimitExceededError as e:
 
 ```
 
-## @time_limit decorator
+### @time_limit decorator
 ```python
 from useless import time_limit, TimeLimitExceededError
 import time
@@ -106,8 +113,8 @@ except TimeLimitExceededError as e:
 
 ```
 
-## To-Do
+## To-Do:
 Too many to list here :)
 
-## Author
+## Author:
 * Ronie Martinez (ronmarti18@gmail.com)
