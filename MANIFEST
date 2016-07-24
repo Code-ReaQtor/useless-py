@@ -3,4 +3,5 @@ README
 VERSION
 setup.py
 useless\__init__.py
+useless\decorators.py
 CHANGELOG.md

@@ -8,114 +8,18 @@ Useful python utilities with less effort.
 pip install useless-py
 ```
 
+## Features:
+- set_interval() function and @interval decorator - similar to Javascript's setInterval() method, uses gevent
+- set_timeout() function and @timeout decorator - similar to Javascript's setTimeout() method, uses gevent
+- set_time_limit() function and @time_limit decorator - limits the maximum execution time of a function, raises TimeLimitExceededError
+- @extends decorator - inheritance using a class decorator
+
 ## Usage:
-
-### set_interval() function
-```python
-from useless import set_interval
-import time
-
-
-def my_function():
-    print "Hello world!"
-
-set_interval(my_function, 500)  # Caution! Non-blocking.
-time.sleep(10)  # Write some blocking code
-
-```
-
-### @interval decorator
-```python
-from useless import interval
-import time
-
-
-@interval(500)
-def my_function():
-    print "Hello world!"
-
-my_function()  # Caution! Non-blocking.
-time.sleep(10)  # Write some blocking code
-
-```
-
-### set_timeout() function
-```python
-from useless import set_timeout
-
-
-def my_function():
-    print "Hello world!"
-
-set_timeout(my_function, 500)
-
-```
-
-### @timeout decorator
-```python
-from useless import timeout
-
-
-@timeout(1000)
-def my_function():
-    print "Hello world!"
-
-my_function()
-
-```
-
-### set_time_limit() function
-```python
-from useless import set_time_limit, TimeLimitExceededError
-import time
-
-
-def my_function():
-    time.sleep(1)
-    print "Hello world!"
-
-
-# if time limit is enough
-set_time_limit(my_function, 1500)
-# if time limit is not enough, raises TimeLimitExceededError
-try:
-    set_time_limit(my_function, 500)
-except TimeLimitExceededError as e:
-    print e.message
-
-```
-
-### @time_limit decorator
-```python
-from useless import time_limit, TimeLimitExceededError
-import time
-
-
-@time_limit(1500)
-def my_function1():
-    time.sleep(1)
-    print "Hello world!"
-
-
-@time_limit(500)
-def my_function2():
-    time.sleep(1)
-    print "Hello world!"
-
-
-# if time limit is enough
-my_function1()
-# if time limit is not enough, raises TimeLimitExceededError
-try:
-    my_function2()
-except TimeLimitExceededError as e:
-    print e.message
-
-```
+Check "sample" folder.
 
 ## To-Do:
 - [ ] Class Decorators
-    - [ ] @extends - like Java's (instead of direct inheritance). IMO, more readable when you are doing multiple inheritance.
+    - [x] @extends - like Java's (instead of direct inheritance). IMO, more readable when you are doing multiple inheritance.
     - [ ] @implements - like Java's (with the help of python "abc" module, we are just adding).
     - [ ] @nocase - rewrite of "nocase" module using a class decorator instead of direct inheritance, more Pythonic, IMO. (https://pypi.python.org/pypi/nocase)
     - [ ] @DidYouMean - raises a "DidYouMean" exception (instead of AttributeError) when an attribute of an instance does not exist and suggests close matches. Think of "git" when you messed up on giving the correct argument:
