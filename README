@@ -21,7 +21,10 @@ Features:
    Javascript's setTimeout() method, uses gevent
 -  set\_time\_limit() function and @time\_limit decorator - limits the
    maximum execution time of a function, raises TimeLimitExceededError
--  @extends decorator - inheritance using a class decorator
+-  @extends decorator - inheritance using a class decorator, inspired by
+   Java's extends
+-  @nocase decorator - class decorator that allows access to attributes
+   regardless of coding style (camelCase or snake\_case)
 
 Usage:
 ------
@@ -36,8 +39,8 @@ To-Do:
    -  [x] @extends - like Java's (instead of direct inheritance). IMO,
       more readable when you are doing multiple inheritance.
    -  [ ] @implements - like Java's (with the help of python "abc"
-      module, we are just adding).
-   -  [ ] @nocase - rewrite of "nocase" module using a class decorator
+      module).
+   -  [x] @nocase - rewrite of "nocase" module using a class decorator
       instead of direct inheritance, more Pythonic, IMO.
       (https://pypi.python.org/pypi/nocase)
    -  [ ] @DidYouMean - raises a "DidYouMean" exception (instead of
@@ -53,7 +56,7 @@ To-Do:
               help
               reflog
 
--  [ ] Context managers
+-  [ ] Context Managers
 
    -  [ ] Regular expressions in a "with" statement - I miss the old
       Perl $1, $2, $3 (special variables)... but global variable is an
