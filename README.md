@@ -119,14 +119,14 @@ except TimeLimitExceededError as e:
     - [ ] @implements - like Java's (with the help of python "abc" module, we are just adding).
     - [ ] @nocase - rewrite of "nocase" module using a class decorator instead of direct inheritance, more Pythonic, IMO. (https://pypi.python.org/pypi/nocase)
     - [ ] @DidYouMean - raises a "DidYouMean" exception (instead of AttributeError) when an attribute of an instance does not exist and suggests close matches. Think of "git" when you messed up on giving the correct argument:
-        ```sh
-        C:\Users\Ronie Martinez>git hello
-        git: 'hello' is not a git command. See 'git --help'.
-        Did you mean one of these?
-                help
-                reflog
-        ```
- - [ ] Context managers
+    ```sh
+    C:\Users\Ronie Martinez>git hello
+    git: 'hello' is not a git command. See 'git --help'.
+    Did you mean one of these?
+            help
+            reflog
+    ```
+- [ ] Context managers
     - [ ] Regular expressions in a "with" statement - I miss the old Perl $1, $2, $3 (special variables)... but global variable is an overkill, let's make a more Pythonic feature 
  
 ## Author:
