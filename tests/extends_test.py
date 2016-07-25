@@ -25,6 +25,7 @@ class ExtendsTest(unittest.TestCase):
         d = Derived(10)
         self.assertIsInstance(d, Base)
         self.assertIsInstance(d, Derived)
+        self.assertTrue(issubclass(Derived, Base))
         self.assertEquals(30, d.double())
         self.assertEquals(30, d.triple())
 
@@ -55,6 +56,8 @@ class ExtendsTest(unittest.TestCase):
         d = Derived(10)
         self.assertIsInstance(d, Base1)
         self.assertIsInstance(d, Base2)
+        self.assertTrue(issubclass(Derived, Base1))
+        self.assertTrue(issubclass(Derived, Base2))
         self.assertIsInstance(d, Derived)
         self.assertEquals(20, d.double())
         self.assertEquals(100, d.triple())

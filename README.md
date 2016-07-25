@@ -14,16 +14,17 @@ pip install useless-py
 - set_time_limit() function and @time_limit decorator - limits the maximum execution time of a function, raises TimeLimitExceededError
 - @extends decorator - inheritance using a class decorator, inspired by Java's extends
 - @nocase decorator - class decorator that allows access to attributes regardless of coding style (camelCase or snake_case)
+- @didyoumean decorator - class decorator, raises DidYouMeanError (subclass of AttributeError) which suggest close matches
 
 ## Usage:
-Check "sample" folder.
+Check "[samples](https://github.com/Code-ReaQtor/useless-py/tree/master/samples)" folder.
 
 ## To-Do:
 - [ ] Class Decorators
     - [x] @extends - like Java's (instead of direct inheritance). IMO, more readable when you are doing multiple inheritance.
     - [ ] @implements - like Java's (with the help of python "abc" module).
     - [x] @nocase - rewrite of "nocase" module using a class decorator instead of direct inheritance, more Pythonic, IMO. (https://pypi.python.org/pypi/nocase)
-    - [ ] @DidYouMean - raises a "DidYouMean" exception (instead of AttributeError) when an attribute of an instance does not exist and suggests close matches. Think of "git" when you messed up on giving the correct argument:
+    - [x] @didyoumean - raises a "DidYouMean" exception (instead of AttributeError) when an attribute of an instance does not exist and suggests close matches. Think of "git" when you messed up on giving the correct argument:
     ```sh
     C:\Users\Ronie Martinez>git hello
     git: 'hello' is not a git command. See 'git --help'.

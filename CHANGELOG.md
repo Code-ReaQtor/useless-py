@@ -6,6 +6,7 @@ List of changes to useless-py
 ## [1.0.3] - 2016-07-24
 ### Added
 - @nocase decorator - class decorator allowing access to attributes regardless of coding style (camelCase or snake_case)
+- @didyoumean decorator - class decorator, raises DidYouMeanError (subclass of AttributeError) which suggest close matches
 
 ## [1.0.2] - 2016-07-24
 ### Added

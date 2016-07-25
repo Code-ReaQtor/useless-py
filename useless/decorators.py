@@ -1,5 +1,8 @@
 #!/usr/bin/env python
+import difflib
 import re
+
+from useless.exceptions import DidYouMeanError
 
 __author__ = 'Ronie Martinez'
 
@@ -33,5 +36,14 @@ def nocase(class_):
         elif _snake.match(name):
             return getattr(self, re.sub("_([a-z0-9]+)", lambda match: match.group(1).title(), name))
         raise AttributeError(name)
+    class_.__getattr__ = __getattr__
+    return class_
+
+
+def didyoumean(class_):
+    methods = filter(lambda x: not x.startswith("__") and not x.endswith("__"), dir(class_))
+    def __getattr__(self, name):
+        possible_matches = difflib.get_close_matches(name, methods)
+        raise DidYouMeanError(class_.__name__, name, possible_matches)
     class_.__getattr__ = __getattr__
     return class_

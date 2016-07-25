@@ -3,6 +3,7 @@ from __future__ import division
 from gevent.monkey import patch_all
 patch_all()
 import gevent
+from useless.exceptions import TimeLimitExceededError
 
 __author__ = 'Ronie Martinez'
 
@@ -59,10 +60,6 @@ def timeout(milliseconds):
             return set_timeout(function, milliseconds, *args, **kwargs)
         return __timeout
     return _timeout
-
-
-class TimeLimitExceededError(Exception):
-    message = "TimeLimitExceededError: Time limit exceeded!"
 
 
 def set_time_limit(function, limit, *args, **kwargs):

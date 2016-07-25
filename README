@@ -25,11 +25,15 @@ Features:
    Java's extends
 -  @nocase decorator - class decorator that allows access to attributes
    regardless of coding style (camelCase or snake\_case)
+-  @didyoumean decorator - class decorator, raises DidYouMeanError
+   (subclass of AttributeError) which suggest close matches
 
 Usage:
 ------
 
-Check "sample" folder.
+Check
+"`samples <https://github.com/Code-ReaQtor/useless-py/tree/master/samples>`__\ "
+folder.
 
 To-Do:
 ------
@@ -43,7 +47,7 @@ To-Do:
    -  [x] @nocase - rewrite of "nocase" module using a class decorator
       instead of direct inheritance, more Pythonic, IMO.
       (https://pypi.python.org/pypi/nocase)
-   -  [ ] @DidYouMean - raises a "DidYouMean" exception (instead of
+   -  [x] @didyoumean - raises a "DidYouMean" exception (instead of
       AttributeError) when an attribute of an instance does not exist
       and suggests close matches. Think of "git" when you messed up on
       giving the correct argument:
