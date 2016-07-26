@@ -4,4 +4,5 @@ VERSION
 setup.py
 useless\__init__.py
 useless\decorators.py
+useless\exceptions.py
 CHANGELOG.md
